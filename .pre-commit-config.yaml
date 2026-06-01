@@ -20,4 +20,3 @@ repos:
     hooks:
       - id: mypy
         files: ^wait_for/
-        additional_dependencies: [parsedatetime>=2.5]
