@@ -278,7 +278,7 @@ Use a ``datetime.timedelta`` for the timeout value:
 
    from datetime import timedelta
 
-   func = partial(lambda: incman.i_sleep_a_lot() > 10)
+   func = lambda: incman.i_sleep_a_lot() > 10
    result, elapsed = wait_for(func, timeout=timedelta(minutes=5), delay=1)
 
 Exponential backoff

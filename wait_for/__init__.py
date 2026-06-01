@@ -191,6 +191,10 @@ def wait_for(
     # Hide this call in the detailed traceback
     # https://docs.pytest.org/en/latest/example/simple.html#writing-well-integrated-assertion-helpers
     __tracebackhide__ = True
+    if "num_sec" in kwargs:
+        raise TypeError(
+            "wait_for() got an unexpected keyword argument 'num_sec'; use 'timeout' instead"
+        )
     if func_args is None:
         func_args = []
     if func_kwargs is None:

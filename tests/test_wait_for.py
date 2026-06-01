@@ -340,6 +340,12 @@ def test_func_kwargs_combined_with_func_args() -> None:
 # ---------------------------------------------------------------------------
 
 
+def test_num_sec_raises_type_error() -> None:
+    """Passing the removed ``num_sec`` kwarg raises ``TypeError`` immediately."""
+    with pytest.raises(TypeError, match="use 'timeout' instead"):
+        wait_for(_always_true, num_sec=30)
+
+
 def test_timeout_none_falls_through_to_default() -> None:
     """``timeout=None`` resolves to the 120 s default."""
     from wait_for import _get_timeout_secs
